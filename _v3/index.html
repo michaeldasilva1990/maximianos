@@ -1,0 +1,1070 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Passagens aéreas, hotéis e pacotes de viagem (voo + hotel) com atendimento humano, suporte 24 horas e ponto de apoio no Terminal 2 do Aeroporto de Guarulhos.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.maximianos.com.br/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Maximianos | Voos, hotéis e pacotes de viagem">
+  <meta property="og:description" content="Monte sua viagem completa: voos, hotéis e pacotes com suporte humano antes, durante e depois da viagem.">
+  <meta property="og:image" content="assets/img/logo-maximianos.png">
+  <title>Maximianos | Voos, Hotéis e Pacotes de Viagem</title>
+
+  <!-- Google Tag Manager: substitua GTM-XXXXXXX pelo seu ID antes de publicar. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+  </script>
+
+  <link rel="preload" href="assets/img/logo.png" as="image">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/app.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "Maximianos",
+    "url": "https://www.maximianos.com.br/",
+    "logo": "https://www.maximianos.com.br/assets/img/logo-maximianos.png",
+    "telephone": "+55 11 2445-3712",
+    "email": "tur@maximianos.com.br",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rod. Hélio Smidt S/N – GRU Airport – Terminal 2 – Check-In E",
+      "addressLocality": "Guarulhos",
+      "addressRegion": "SP",
+      "postalCode": "07190-100",
+      "addressCountry": "BR"
+    },
+    "sameAs": ["https://www.instagram.com/maximianosviagens/"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a class="brand" href="#topo" aria-label="Maximianos, página inicial">
+        <img src="assets/img/logo-black.png" width="88" height="88" alt="Logo Maximianos">
+        <span>MAXIMIANOS</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="#buscar">Buscar viagem</a>
+        <a href="#pacotes">Pacotes</a>
+        <a href="#destinos">Destinos</a>
+        <a href="#vantagens">Vantagens</a>
+        <a href="#depoimentos">Avaliações</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <a class="btn btn-outline header-cta js-track-whatsapp"
+         href="https://wa.me/551124453712?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Maximianos%20e%20preciso%20de%20ajuda%20com%20uma%20viagem."
+         target="_blank" rel="noopener">
+        Falar com especialista
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Navegação móvel" hidden>
+      <a href="#buscar">Buscar viagem</a>
+      <a href="#pacotes">Pacotes</a>
+      <a href="#destinos">Destinos</a>
+      <a href="#vantagens">Vantagens</a>
+      <a href="#depoimentos">Avaliações</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <!-- HERO + BUSCADOR (voos, hotéis, pacotes e carros) -->
+    <section class="hero">
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="assets/video/hero-travel-loop.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy reveal">
+          <span class="eyebrow"><span></span> Voos · Hotéis · Pacotes</span>
+          <h1>Sua próxima viagem começa na <strong>Maximianos</strong></h1>
+          <p>Encontre passagens, hospedagem e pacotes completos (voo + hotel) com as melhores condições — e conte com atendimento humano do início ao fim da sua viagem.</p>
+        </div>
+
+        <div class="search-shell reveal booking-widget" id="buscar">
+          <div class="booking-tabs" role="tablist" aria-label="Serviços de viagem">
+            <button class="booking-tab active" type="button" role="tab" aria-selected="true" data-service="flights"><img src="assets/img/icon-plane.png" alt=""><span>Voos</span></button>
+            <button class="booking-tab" type="button" role="tab" aria-selected="false" data-service="hotels"><img src="assets/img/icon-hotel-tab.png" alt=""><span>Hotéis</span></button>
+            <button class="booking-tab" type="button" role="tab" aria-selected="false" data-service="packages"><img src="assets/img/icon-package-tab.png" alt=""><span>Pacotes (Voo + Hotel)</span></button>
+            <button class="booking-tab" type="button" role="tab" aria-selected="false" data-service="cars"><img src="assets/img/icon-car-tab.png" alt=""><span>Carros</span></button>
+          </div>
+
+          <form id="flight-search" novalidate>
+            <div class="booking-options">
+              <fieldset class="trip-type">
+                <legend class="sr-only">Tipo de viagem</legend>
+                <label><input type="radio" name="tripType" value="roundtrip" checked><span>Ida e volta</span></label>
+                <label><input type="radio" name="tripType" value="oneway"><span>Somente ida</span></label>
+              </fieldset>
+              <label class="checkbox-row compact direct-option"><input id="direct-only" type="checkbox"><span>Somente voos diretos</span></label>
+              <label class="checkbox-row compact car-different-location" hidden><input id="car-different-location" type="checkbox"><span>Devolver o carro em um local diferente</span></label>
+              <div class="field passengers-field compact-passengers">
+                <button class="passenger-trigger" type="button" aria-expanded="false" aria-controls="passenger-popover"><img src="assets/img/icon-support.png" alt=""><span id="passenger-summary">1 Adulto</span><span class="passenger-arrow">⌄</span></button>
+                <div class="passenger-popover" id="passenger-popover" hidden>
+                  <div class="passenger-row"><div><strong>Adultos</strong><small>12 anos ou mais</small></div><div class="stepper"><button type="button" data-action="minus" data-target="adults">−</button><output id="adults-value">1</output><button type="button" data-action="plus" data-target="adults">+</button></div></div>
+                  <div class="passenger-row"><div><strong>Crianças</strong><small>2 a 11 anos</small></div><div class="stepper"><button type="button" data-action="minus" data-target="children">−</button><output id="children-value">0</output><button type="button" data-action="plus" data-target="children">+</button></div></div>
+                  <div class="passenger-row"><div><strong>Bebês</strong><small>0 a 23 meses</small></div><div class="stepper"><button type="button" data-action="minus" data-target="infants">−</button><output id="infants-value">0</output><button type="button" data-action="plus" data-target="infants">+</button></div></div>
+                  <div class="passenger-row rooms-row"><div><strong>Quartos</strong><small>Quantidade de quartos</small></div><div class="stepper"><button type="button" data-action="minus" data-target="rooms">−</button><output id="rooms-value">1</output><button type="button" data-action="plus" data-target="rooms">+</button></div></div>
+                  <button class="passenger-done" type="button">Concluído</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="search-horizontal modern-search">
+              <label class="field"><span>Origem</span><div class="input-wrap"><img src="assets/img/icon-plane.png" alt=""><input id="origin" name="origin" type="text" list="airports" autocomplete="off" placeholder="De onde você vai sair?" required></div><small class="error-text"></small></label>
+              <button class="swap-route" type="button" aria-label="Inverter origem e destino"><img src="assets/img/icon-refresh.png" alt=""></button>
+              <label class="field"><span>Destino</span><div class="input-wrap"><img src="assets/img/icon-pin.png" alt=""><input id="destination" name="destination" type="text" list="airports" autocomplete="off" placeholder="Para onde você vai?" required></div><small class="error-text"></small></label>
+              <div class="field date-field"><span>Ida</span><button id="departure-date-button" class="date-trigger" type="button"><span id="departure-date-label">Escolha a data</span></button><input id="departure-date" name="departureDate" type="hidden"><small class="error-text"></small></div>
+              <div class="field return-field date-field"><span>Volta</span><button id="return-date-button" class="date-trigger" type="button"><span id="return-date-label">Escolha a data</span></button><input id="return-date" name="returnDate" type="hidden"><small class="error-text"></small></div>
+              <label class="field car-time-field" hidden><span>Hora da retirada</span><select id="pickup-time"><option>08:00</option><option>09:00</option><option selected>10:00</option><option>11:00</option><option>12:00</option><option>14:00</option><option>16:00</option><option>18:00</option><option>20:00</option></select></label>
+              <label class="field car-time-field" hidden><span>Hora da devolução</span><select id="return-time"><option>08:00</option><option>09:00</option><option selected>10:00</option><option>11:00</option><option>12:00</option><option>14:00</option><option>16:00</option><option>18:00</option><option>20:00</option></select></label>
+              <button class="btn btn-gold search-submit" type="submit"><span>Buscar</span><img src="assets/img/icon-arrow.png" alt=""></button>
+            </div>
+
+            <div class="recent-searches" id="recent-searches" hidden><strong>Últimas pesquisas</strong><div id="recent-search-list"></div></div>
+          </form>
+
+          <div class="calendar-popover" id="calendar-popover" hidden aria-label="Selecione as datas">
+            <div class="calendar-header"><div><strong>Check-in e Check-out</strong><span id="calendar-range-summary">Selecione ida e volta</span></div><button id="calendar-close" type="button" aria-label="Fechar calendário">×</button></div>
+            <div class="calendar-shortcuts"><button type="button" data-shortcut="tomorrow">Amanhã à noite</button><button type="button" data-shortcut="weekend">Próximo fim de semana</button></div>
+            <div class="calendar-nav"><button id="calendar-prev" type="button" aria-label="Mês anterior">‹</button><button id="calendar-next" type="button" aria-label="Próximo mês">›</button></div>
+            <div class="calendar-months" id="calendar-months"></div>
+            <div class="calendar-footer"><button id="calendar-clear" type="button">Limpar</button><button id="calendar-apply" class="btn btn-gold" type="button">Aplicar datas</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAIXA DE CONFIANÇA -->
+    <section class="trust-strip" aria-label="Razões para confiar na Maximianos">
+      <div class="container trust-grid">
+        <div><span class="trust-icon"><img src="assets/img/icon-star.png" alt=""></span><p><strong>Atendimento excelente</strong><br>avaliações reais no Google</p></div>
+        <div><span class="trust-icon"><img src="assets/img/icon-pin.png" alt=""></span><p><strong>Loja dentro do GRU</strong><br>Terminal 2, Check-In E</p></div>
+        <div><span class="trust-icon"><img src="assets/img/icon-check.png" alt=""></span><p><strong>Voo + Hotel num só lugar</strong><br>pacotes fechados sob medida</p></div>
+        <div><span class="trust-icon"><img src="assets/img/icon-arrow.png" alt=""></span><p><strong>Parcelamento facilitado</strong><br>até 10x no boleto ou cartão</p></div>
+      </div>
+    </section>
+
+    <!-- OFERTAS DA SEMANA (carrossel) -->
+    <section class="section offers-section">
+      <div class="container">
+        <div class="offers-head reveal">
+          <div class="section-heading" style="margin:0;">
+            <span class="eyebrow"><span></span> Ofertas da semana</span>
+            <h2 style="margin:16px 0 8px;">Aproveite enquanto o preço está bom.</h2>
+            <p style="margin:0;">Seleção atualizada semanalmente com destinos nacionais e internacionais.</p>
+          </div>
+          <a class="text-link" href="#buscar">Ver todas as ofertas <span>→</span></a>
+        </div>
+
+        <div class="offers-track reveal">
+          <article class="offer-card">
+            <div class="offer-media">
+              <!-- Sugestão: foto horizontal de praia/litoral nordestino, 800x600px -->
+              <div class="media-placeholder" style="--ph-1:#f3ddd6; --ph-2:#f2e6cf;">
+                <img src="assets/img/oferta-nordeste.jpg">
+                <p class="ph-label">Imagem: Nordeste (praia)<small>800×600px · assets/img/oferta-nordeste.jpg</small></p>
+              </div>
+            </div>
+            <div class="offer-body">
+              <span class="offer-badge">Nacional</span>
+              <h3>Destinos do Nordeste a partir de R$ 389</h3>
+              <p>Voos diretos e conexões para Recife, Maceió, Fortaleza e Salvador.</p>
+              <a class="text-link js-fill-search" href="#buscar" data-destino="Recife - REC" data-service="flights">Aproveitar oferta <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="offer-card">
+            <div class="offer-media">
+              <!-- Sugestão: foto de cidade europeia (ex.: Lisboa), 800x600px -->
+              <div class="media-placeholder" style="--ph-1:#dcecf5; --ph-2:#f2e6cf;">
+                <img src="assets/img/oferta-lisboa.jpg">
+                <p class="ph-label">Imagem: Lisboa / Europa<small>800×600px · assets/img/oferta-lisboa.jpg</small></p>
+              </div>
+            </div>
+            <div class="offer-body">
+              <span class="offer-badge">Internacional</span>
+              <h3>Novo trecho para Lisboa</h3>
+              <p>Comece a planejar sua viagem à Europa com tarifas promocionais por tempo limitado.</p>
+              <a class="text-link js-fill-search" href="#buscar" data-destino="Lisboa - LIS" data-service="flights">Aproveitar oferta <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="offer-card">
+            <div class="offer-media">
+              <!-- Sugestão: foto de resort/hotel para o pacote em destaque, 800x600px -->
+              <div class="media-placeholder" style="--ph-1:#f2e6cf; --ph-2:#dcecf5;">
+                <img src="assets/img/oferta-pacote.jpg">
+                <p class="ph-label">Imagem: Resort / pacote<small>800×600px · assets/img/oferta-pacote.jpg</small></p>
+              </div>
+            </div>
+            <div class="offer-body">
+              <span class="offer-badge">Pacote voo + hotel</span>
+              <h3>Feriados 2026: garanta seu roteiro</h3>
+              <p>Pacotes fechados com voo, hospedagem e traslado para os próximos feriados prolongados.</p>
+              <a class="text-link" href="#pacotes">Ver pacotes <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="offer-card">
+            <div class="offer-media">
+              <!-- Sugestão: foto de destino sul-americano (ex.: Buenos Aires), 800x600px -->
+              <div class="media-placeholder" style="--ph-1:#f3ddd6; --ph-2:#dcecf5;">
+                <img src="assets/img/oferta-america-sul.jpg">
+                <p class="ph-label">Imagem: América do Sul<small>800×600px · assets/img/oferta-america-sul.jpg</small></p>
+              </div>
+            </div>
+            <div class="offer-body">
+              <span class="offer-badge">Internacional</span>
+              <h3>Argentina e Chile com condições especiais</h3>
+              <p>Ida e volta a partir de valores promocionais, sujeitos a disponibilidade.</p>
+              <a class="text-link js-fill-search" href="#buscar" data-destino="Buenos Aires - EZE" data-service="flights">Aproveitar oferta <span>→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTINOS MAIS PROCURADOS -->
+    <section class="section destinations" id="destinos">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow"><span></span> Onde os viajantes estão indo</span>
+          <h2>Destinos mais procurados agora.</h2>
+          <p>Um panorama dos preços mais baixos encontrados nos últimos dias para cada destino.</p>
+        </div>
+
+        <div class="destinations-grid">
+          <article class="destination-card reveal">
+            <div class="destination-media">
+              <!-- Sugestão: foto do Rio de Janeiro (Pão de Açúcar/Corcovado), 600x450px -->
+              <div class="media-placeholder" style="--ph-1:#f2e6cf; --ph-2:#f3ddd6;">
+                <img src="assets/img/destino-rio.jpg">
+                <p class="ph-label">Rio de Janeiro<small>assets/img/destino-rio.jpg</small></p>
+              </div>
+            </div>
+            <div class="destination-body">
+              <span class="city-tag">Nacional · GIG / SDU</span>
+              <h3>Rio de Janeiro</h3>
+              <div class="destination-price">R$ 349 <small>ida e volta, por pessoa</small></div>
+            </div>
+          </article>
+
+          <article class="destination-card reveal">
+            <div class="destination-media">
+              <!-- Sugestão: foto de Salvador/Pelourinho ou praia, 600x450px -->
+              <div class="media-placeholder" style="--ph-1:#dcecf5; --ph-2:#f2e6cf;">
+                <img src="assets/img/destino-salvador.jpg">
+                <p class="ph-label">Salvador<small>assets/img/destino-salvador.jpg</small></p>
+              </div>
+            </div>
+            <div class="destination-body">
+              <span class="city-tag">Nacional · SSA</span>
+              <h3>Salvador</h3>
+              <div class="destination-price">R$ 419 <small>ida e volta, por pessoa</small></div>
+            </div>
+          </article>
+
+          <article class="destination-card reveal">
+            <div class="destination-media">
+              <!-- Sugestão: foto de Buenos Aires (Obelisco), 600x450px -->
+              <div class="media-placeholder" style="--ph-1:#f3ddd6; --ph-2:#dcecf5;">
+                <img src="assets/img/destino-buenos-aires.jpg">
+                <p class="ph-label">Buenos Aires<small>assets/img/destino-buenos-aires.jpg</small></p>
+              </div>
+            </div>
+            <div class="destination-body">
+              <span class="city-tag">Internacional · EZE</span>
+              <h3>Buenos Aires</h3>
+              <div class="destination-price">R$ 1.735 <small>ida e volta, por pessoa</small></div>
+            </div>
+          </article>
+
+          <article class="destination-card reveal">
+            <div class="destination-media">
+              <!-- Sugestão: foto de Lisboa (Belém/elétrico), 600x450px -->
+              <div class="media-placeholder" style="--ph-1:#f2e6cf; --ph-2:#dcecf5;">
+                <img src="assets/img/destino-lisboa.jpg">
+                <p class="ph-label">Lisboa<small>assets/img/destino-lisboa.jpg</small></p>
+              </div>
+            </div>
+            <div class="destination-body">
+              <span class="city-tag">Internacional · LIS</span>
+              <h3>Lisboa</h3>
+              <div class="destination-price">R$ 2.890 <small>ida e volta, por pessoa</small></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PACOTES DE VIAGEM (VOO + HOTEL) -->
+    <section class="section packages-section" id="pacotes">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow"><span></span> Voo + Hotel num só lugar</span>
+          <h2>Pacotes prontos para você só fazer as malas.</h2>
+          <p>Roteiros fechados com passagem, hospedagem e serviços opcionais como traslado e seguro viagem.</p>
+        </div>
+
+        <!-- Nordeste -->
+        <div class="package-group reveal">
+          <div class="package-group-head">
+            <div><span class="region-tag">Praias do Brasil</span><h3>Nordeste</h3></div>
+            <a class="text-link" href="#buscar">Ver mais pacotes <span>→</span></a>
+          </div>
+          <div class="packages-grid">
+            <article class="package-card">
+              <div class="package-media">
+                <span class="package-tag">7 noites</span>
+                <!-- Sugestão: foto de praia em Maceió/Maragogi, 600x420px -->
+                <div class="media-placeholder" style="--ph-1:#dcecf5; --ph-2:#f3ddd6;">
+                  <img src="assets/img/pacote-maceio.jpg">
+                  <p class="ph-label">Maceió<small>assets/img/pacote-maceio.jpg</small></p>
+                </div>
+              </div>
+              <div class="package-body">
+                <h3>Maceió completo</h3>
+                <p class="package-nights">Voo direto + hotel c/ café da manhã</p>
+                <ul class="package-includes">
+                  <li><img src="assets/img/icon-plane.png" alt="">Voo ida e volta</li>
+                  <li><img src="assets/img/icon-hotel-tab.png" alt="">7 noites de hospedagem</li>
+                  <li><img src="assets/img/icon-check.png" alt="">Café da manhã incluso</li>
+                </ul>
+                <div class="package-footer">
+                  <div class="package-price"><strong>R$ 1.890</strong><span>por pessoa, base casal</span></div>
+                  <a class="btn btn-gold js-fill-search" href="#buscar" data-destino="Maceió - MCZ" data-service="packages">Ver</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="package-card">
+              <div class="package-media">
+                <span class="package-tag">6 noites</span>
+                <!-- Sugestão: foto de Porto de Galinhas/Recife, 600x420px -->
+                <div class="media-placeholder" style="--ph-1:#f2e6cf; --ph-2:#dcecf5;">
+                  <img src="assets/img/pacote-porto-galinhas.jpg">
+                  <p class="ph-label">Porto de Galinhas<small>assets/img/pacote-porto-galinhas.jpg</small></p>
+                </div>
+              </div>
+              <div class="package-body">
+                <h3>Porto de Galinhas</h3>
+                <p class="package-nights">Voo + resort à beira-mar</p>
+                <ul class="package-includes">
+                  <li><img src="assets/img/icon-plane.png" alt="">Voo ida e volta</li>
+                  <li><img src="assets/img/icon-hotel-tab.png" alt="">6 noites de hospedagem</li>
+                  <li><img src="assets/img/icon-diamond.png" alt="">Regime all inclusive opcional</li>
+                </ul>
+                <div class="package-footer">
+                  <div class="package-price"><strong>R$ 2.150</strong><span>por pessoa, base casal</span></div>
+                  <a class="btn btn-gold js-fill-search" href="#buscar" data-destino="Recife - REC" data-service="packages">Ver</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="package-card">
+              <div class="package-media">
+                <span class="package-tag">5 noites</span>
+                <!-- Sugestão: foto de Fortaleza/Jericoacoara, 600x420px -->
+                <div class="media-placeholder" style="--ph-1:#f3ddd6; --ph-2:#f2e6cf;">
+                  <img src="assets/img/pacote-fortaleza.jpg">
+                  <p class="ph-label">Fortaleza<small>assets/img/pacote-fortaleza.jpg</small></p>
+                </div>
+              </div>
+              <div class="package-body">
+                <h3>Fortaleza & Jericoacoara</h3>
+                <p class="package-nights">Voo + hotel + city tour opcional</p>
+                <ul class="package-includes">
+                  <li><img src="assets/img/icon-plane.png" alt="">Voo ida e volta</li>
+                  <li><img src="assets/img/icon-hotel-tab.png" alt="">5 noites de hospedagem</li>
+                  <li><img src="assets/img/icon-car-tab.png" alt="">Traslado opcional</li>
+                </ul>
+                <div class="package-footer">
+                  <div class="package-price"><strong>R$ 1.690</strong><span>por pessoa, base casal</span></div>
+                  <a class="btn btn-gold js-fill-search" href="#buscar" data-destino="Fortaleza - FOR" data-service="packages">Ver</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="package-card">
+              <div class="package-media">
+                <span class="package-tag">7 noites</span>
+                <!-- Sugestão: foto de Salvador/Pelourinho, 600x420px -->
+                <div class="media-placeholder" style="--ph-1:#dcecf5; --ph-2:#f2e6cf;">
+                  <img src="assets/img/pacote-salvador.jpg">
+                  <p class="ph-label">Salvador<small>assets/img/pacote-salvador.jpg</small></p>
+                </div>
+              </div>
+              <div class="package-body">
+                <h3>Salvador histórica</h3>
+                <p class="package-nights">Voo + hotel no centro histórico</p>
+                <ul class="package-includes">
+                  <li><img src="assets/img/icon-plane.png" alt="">Voo ida e volta</li>
+                  <li><img src="assets/img/icon-hotel-tab.png" alt="">7 noites de hospedagem</li>
+                  <li><img src="assets/img/icon-exclusive-tab.png" alt="">Passeio ao Pelourinho opcional</li>
+                </ul>
+                <div class="package-footer">
+                  <div class="package-price"><strong>R$ 1.980</strong><span>por pessoa, base casal</span></div>
+                  <a class="btn btn-gold js-fill-search" href="#buscar" data-destino="Salvador - SSA" data-service="packages">Ver</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Sul / América do Sul -->
+        <div class="package-group reveal">
+          <div class="package-group-head">
+            <div><span class="region-tag">Pertinho de casa</span><h3>Sul & América do Sul</h3></div>
+            <a class="text-link" href="#buscar">Ver mais pacotes <span>→</span></a>
+          </div>
+          <div class="packages-grid">
+            <article class="package-card">
+              <div class="package-media">
+                <span class="package-tag">5 noites</span>
+                <!-- Sugestão: foto de Buenos Aires urbano/gastronômico, 600x420px -->
+                <div class="media-placeholder" style="--ph-1:#f2e6cf; --ph-2:#dcecf5;">
+                  <img src="assets/img/pacote-buenos-aires.jpg">
+                  <p class="ph-label">Buenos Aires<small>assets/img/pacote-buenos-aires.jpg</small></p>
+                </div>
+              </div>
+              <div class="package-body">
+                <h3>Buenos Aires gastronômica</h3>
+                <p class="package-nights">Voo + hotel 4 estrelas no centro</p>
+                <ul class="package-includes">
+                  <li><img src="assets/img/icon-plane.png" alt="">Voo ida e volta</li>
+                  <li><img src="assets/img/icon-hotel-tab.png" alt="">5 noites de hospedagem</li>
+                  <li><img src="assets/img/icon-insurance-tab.png" alt="">Seguro viagem opcional</li>
+                </ul>
+                <div class="package-footer">
+                  <div class="package-price"><strong>R$ 3.240</strong><span>por pessoa, base casal</span></div>
+                  <a class="btn btn-gold js-fill-search" href="#buscar" data-destino="Buenos Aires - EZE" data-service="packages">Ver</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="package-card">
+              <div class="package-media">
+                <span class="package-tag">6 noites</span>
+                <!-- Sugestão: foto de Bariloche/montanhas, 600x420px -->
+                <div class="media-placeholder" style="--ph-1:#dcecf5; --ph-2:#f3ddd6;">
+                  <img src="assets/img/pacote-bariloche.jpg">
+                  <p class="ph-label">Bariloche<small>assets/img/pacote-bariloche.jpg</small></p>
+                </div>
+              </div>
+              <div class="package-body">
+                <h3>Bariloche na neve</h3>
+                <p class="package-nights">Voo + hotel próximo ao centro cívico</p>
+                <ul class="package-includes">
+                  <li><img src="assets/img/icon-plane.png" alt="">Voo ida e volta</li>
+                  <li><img src="assets/img/icon-hotel-tab.png" alt="">6 noites de hospedagem</li>
+                  <li><img src="assets/img/icon-exclusive-tab.png" alt="">Passeio Circuito Chico opcional</li>
+                </ul>
+                <div class="package-footer">
+                  <div class="package-price"><strong>R$ 4.150</strong><span>por pessoa, base casal</span></div>
+                  <a class="btn btn-gold js-fill-search" href="#buscar" data-destino="Bariloche - BRC" data-service="packages">Ver</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="package-card">
+              <div class="package-media">
+                <span class="package-tag">5 noites</span>
+                <!-- Sugestão: foto de Santiago/Cordilheira dos Andes, 600x420px -->
+                <div class="media-placeholder" style="--ph-1:#f3ddd6; --ph-2:#dcecf5;">
+                  <img src="assets/img/pacote-santiago.jpg">
+                  <p class="ph-label">Santiago<small>assets/img/pacote-santiago.jpg</small></p>
+                </div>
+              </div>
+              <div class="package-body">
+                <h3>Santiago & vinícolas</h3>
+                <p class="package-nights">Voo + hotel + passeio a vinícola opcional</p>
+                <ul class="package-includes">
+                  <li><img src="assets/img/icon-plane.png" alt="">Voo ida e volta</li>
+                  <li><img src="assets/img/icon-hotel-tab.png" alt="">5 noites de hospedagem</li>
+                  <li><img src="assets/img/icon-car-tab.png" alt="">Traslado opcional</li>
+                </ul>
+                <div class="package-footer">
+                  <div class="package-price"><strong>R$ 3.590</strong><span>por pessoa, base casal</span></div>
+                  <a class="btn btn-gold js-fill-search" href="#buscar" data-destino="Santiago - SCL" data-service="packages">Ver</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="package-card">
+              <div class="package-media">
+                <span class="package-tag">4 noites</span>
+                <!-- Sugestão: foto de Punta del Este/praia, 600x420px -->
+                <div class="media-placeholder" style="--ph-1:#f2e6cf; --ph-2:#f3ddd6;">
+                  <img src="assets/img/pacote-punta-del-este.jpg">
+                  <p class="ph-label">Punta del Este<small>assets/img/pacote-punta-del-este.jpg</small></p>
+                </div>
+              </div>
+              <div class="package-body">
+                <h3>Punta del Este</h3>
+                <p class="package-nights">Voo direto + hotel à beira-mar</p>
+                <ul class="package-includes">
+                  <li><img src="assets/img/icon-plane.png" alt="">Voo ida e volta</li>
+                  <li><img src="assets/img/icon-hotel-tab.png" alt="">4 noites de hospedagem</li>
+                  <li><img src="assets/img/icon-check.png" alt="">Café da manhã incluso</li>
+                </ul>
+                <div class="package-footer">
+                  <div class="package-price"><strong>R$ 2.980</strong><span>por pessoa, base casal</span></div>
+                  <a class="btn btn-gold js-fill-search" href="#buscar" data-destino="Punta del Este - PDP" data-service="packages">Ver</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- América Central / EUA -->
+        <div class="package-group reveal">
+          <div class="package-group-head">
+            <div><span class="region-tag">Compras e parques</span><h3>América Central & EUA</h3></div>
+            <a class="text-link" href="#buscar">Ver mais pacotes <span>→</span></a>
+          </div>
+          <div class="packages-grid">
+            <article class="package-card">
+              <div class="package-media">
+                <span class="package-tag">8 noites</span>
+                <!-- Sugestão: foto de Orlando/parques temáticos, 600x420px -->
+                <div class="media-placeholder" style="--ph-1:#dcecf5; --ph-2:#f2e6cf;">
+                  <img src="assets/img/pacote-orlando.jpg">
+                  <p class="ph-label">Orlando<small>assets/img/pacote-orlando.jpg</small></p>
+                </div>
+              </div>
+              <div class="package-body">
+                <h3>Orlando em família</h3>
+                <p class="package-nights">Voo + hotel próximo aos parques</p>
+                <ul class="package-includes">
+                  <li><img src="assets/img/icon-plane.png" alt="">Voo ida e volta</li>
+                  <li><img src="assets/img/icon-hotel-tab.png" alt="">8 noites de hospedagem</li>
+                  <li><img src="assets/img/icon-exclusive-tab.png" alt="">Ingressos de parques opcionais</li>
+                </ul>
+                <div class="package-footer">
+                  <div class="package-price"><strong>R$ 7.450</strong><span>por pessoa, base casal</span></div>
+                  <a class="btn btn-gold js-fill-search" href="#buscar" data-destino="Orlando - MCO" data-service="packages">Ver</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="package-card">
+              <div class="package-media">
+                <span class="package-tag">6 noites</span>
+                <!-- Sugestão: foto de Miami/South Beach, 600x420px -->
+                <div class="media-placeholder" style="--ph-1:#f2e6cf; --ph-2:#dcecf5;">
+                  <img src="assets/img/pacote-miami.jpg">
+                  <p class="ph-label">Miami<small>assets/img/pacote-miami.jpg</small></p>
+                </div>
+              </div>
+              <div class="package-body">
+                <h3>Miami & compras</h3>
+                <p class="package-nights">Voo + hotel próximo aos outlets</p>
+                <ul class="package-includes">
+                  <li><img src="assets/img/icon-plane.png" alt="">Voo ida e volta</li>
+                  <li><img src="assets/img/icon-hotel-tab.png" alt="">6 noites de hospedagem</li>
+                  <li><img src="assets/img/icon-car-tab.png" alt="">Aluguel de carro opcional</li>
+                </ul>
+                <div class="package-footer">
+                  <div class="package-price"><strong>R$ 6.290</strong><span>por pessoa, base casal</span></div>
+                  <a class="btn btn-gold js-fill-search" href="#buscar" data-destino="Miami - MIA" data-service="packages">Ver</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="package-card">
+              <div class="package-media">
+                <span class="package-tag">5 noites</span>
+                <!-- Sugestão: foto de Cancún/Riviera Maya, 600x420px -->
+                <div class="media-placeholder" style="--ph-1:#f3ddd6; --ph-2:#f2e6cf;">
+                  <img src="assets/img/pacote-cancun.jpg">
+                  <p class="ph-label">Cancún<small>assets/img/pacote-cancun.jpg</small></p>
+                </div>
+              </div>
+              <div class="package-body">
+                <h3>Cancún all inclusive</h3>
+                <p class="package-nights">Voo + resort all inclusive</p>
+                <ul class="package-includes">
+                  <li><img src="assets/img/icon-plane.png" alt="">Voo ida e volta</li>
+                  <li><img src="assets/img/icon-hotel-tab.png" alt="">5 noites de hospedagem</li>
+                  <li><img src="assets/img/icon-diamond.png" alt="">Regime all inclusive incluso</li>
+                </ul>
+                <div class="package-footer">
+                  <div class="package-price"><strong>R$ 5.980</strong><span>por pessoa, base casal</span></div>
+                  <a class="btn btn-gold js-fill-search" href="#buscar" data-destino="Cancún - CUN" data-service="packages">Ver</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="package-card">
+              <div class="package-media">
+                <span class="package-tag">6 noites</span>
+                <!-- Sugestão: foto de Nova York/Times Square, 600x420px -->
+                <div class="media-placeholder" style="--ph-1:#dcecf5; --ph-2:#f3ddd6;">
+                  <img src="assets/img/pacote-nova-york.jpg">
+                  <p class="ph-label">Nova York<small>assets/img/pacote-nova-york.jpg</small></p>
+                </div>
+              </div>
+              <div class="package-body">
+                <h3>Nova York clássica</h3>
+                <p class="package-nights">Voo + hotel em Manhattan</p>
+                <ul class="package-includes">
+                  <li><img src="assets/img/icon-plane.png" alt="">Voo ida e volta</li>
+                  <li><img src="assets/img/icon-hotel-tab.png" alt="">6 noites de hospedagem</li>
+                  <li><img src="assets/img/icon-insurance-tab.png" alt="">Seguro viagem opcional</li>
+                </ul>
+                <div class="package-footer">
+                  <div class="package-price"><strong>R$ 8.190</strong><span>por pessoa, base casal</span></div>
+                  <a class="btn btn-gold js-fill-search" href="#buscar" data-destino="Nova York - JFK" data-service="packages">Ver</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Europa -->
+        <div class="package-group reveal">
+          <div class="package-group-head">
+            <div><span class="region-tag">O sonho europeu</span><h3>Europa</h3></div>
+            <a class="text-link" href="#buscar">Ver mais pacotes <span>→</span></a>
+          </div>
+          <div class="packages-grid">
+            <article class="package-card">
+              <div class="package-media">
+                <span class="package-tag">8 noites</span>
+                <!-- Sugestão: foto de Lisboa/Sintra, 600x420px -->
+                <div class="media-placeholder" style="--ph-1:#f3ddd6; --ph-2:#f2e6cf;">
+                  <img src="assets/img/pacote-lisboa.jpg">
+                  <p class="ph-label">Lisboa<small>assets/img/pacote-lisboa.jpg</small></p>
+                </div>
+              </div>
+              <div class="package-body">
+                <h3>Lisboa e arredores</h3>
+                <p class="package-nights">Voo + hotel bem localizado</p>
+                <ul class="package-includes">
+                  <li><img src="assets/img/icon-plane.png" alt="">Voo ida e volta</li>
+                  <li><img src="assets/img/icon-hotel-tab.png" alt="">8 noites de hospedagem</li>
+                  <li><img src="assets/img/icon-exclusive-tab.png" alt="">Passeio a Sintra opcional</li>
+                </ul>
+                <div class="package-footer">
+                  <div class="package-price"><strong>R$ 6.980</strong><span>por pessoa, base casal</span></div>
+                  <a class="btn btn-gold js-fill-search" href="#buscar" data-destino="Lisboa - LIS" data-service="packages">Ver</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="package-card">
+              <div class="package-media">
+                <span class="package-tag">7 noites</span>
+                <!-- Sugestão: foto de Paris/Torre Eiffel, 600x420px -->
+                <div class="media-placeholder" style="--ph-1:#dcecf5; --ph-2:#f2e6cf;">
+                  <img src="assets/img/pacote-paris.jpg">
+                  <p class="ph-label">Paris<small>assets/img/pacote-paris.jpg</small></p>
+                </div>
+              </div>
+              <div class="package-body">
+                <h3>Paris romântica</h3>
+                <p class="package-nights">Voo + hotel próximo ao centro</p>
+                <ul class="package-includes">
+                  <li><img src="assets/img/icon-plane.png" alt="">Voo ida e volta</li>
+                  <li><img src="assets/img/icon-hotel-tab.png" alt="">7 noites de hospedagem</li>
+                  <li><img src="assets/img/icon-insurance-tab.png" alt="">Seguro viagem opcional</li>
+                </ul>
+                <div class="package-footer">
+                  <div class="package-price"><strong>R$ 8.450</strong><span>por pessoa, base casal</span></div>
+                  <a class="btn btn-gold js-fill-search" href="#buscar" data-destino="Paris - CDG" data-service="packages">Ver</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="package-card">
+              <div class="package-media">
+                <span class="package-tag">6 noites</span>
+                <!-- Sugestão: foto de Madrid/Plaza Mayor, 600x420px -->
+                <div class="media-placeholder" style="--ph-1:#f2e6cf; --ph-2:#dcecf5;">
+                  <img src="assets/img/pacote-madrid.jpg">
+                  <p class="ph-label">Madrid<small>assets/img/pacote-madrid.jpg</small></p>
+                </div>
+              </div>
+              <div class="package-body">
+                <h3>Madrid histórica</h3>
+                <p class="package-nights">Voo + hotel no centro</p>
+                <ul class="package-includes">
+                  <li><img src="assets/img/icon-plane.png" alt="">Voo ida e volta</li>
+                  <li><img src="assets/img/icon-hotel-tab.png" alt="">6 noites de hospedagem</li>
+                  <li><img src="assets/img/icon-car-tab.png" alt="">Traslado opcional</li>
+                </ul>
+                <div class="package-footer">
+                  <div class="package-price"><strong>R$ 7.290</strong><span>por pessoa, base casal</span></div>
+                  <a class="btn btn-gold js-fill-search" href="#buscar" data-destino="Madrid - MAD" data-service="packages">Ver</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="package-card">
+              <div class="package-media">
+                <span class="package-tag">9 noites</span>
+                <!-- Sugestão: foto de Roma/Coliseu, 600x420px -->
+                <div class="media-placeholder" style="--ph-1:#f3ddd6; --ph-2:#dcecf5;">
+                  <img src="assets/img/pacote-roma.jpg">
+                  <p class="ph-label">Roma<small>assets/img/pacote-roma.jpg</small></p>
+                </div>
+              </div>
+              <div class="package-body">
+                <h3>Roma & Itália clássica</h3>
+                <p class="package-nights">Voo + hotel + city tour opcional</p>
+                <ul class="package-includes">
+                  <li><img src="assets/img/icon-plane.png" alt="">Voo ida e volta</li>
+                  <li><img src="assets/img/icon-hotel-tab.png" alt="">9 noites de hospedagem</li>
+                  <li><img src="assets/img/icon-diamond.png" alt="">Hotel categoria 4 estrelas</li>
+                </ul>
+                <div class="package-footer">
+                  <div class="package-price"><strong>R$ 9.780</strong><span>por pessoa, base casal</span></div>
+                  <a class="btn btn-gold js-fill-search" href="#buscar" data-destino="Roma - FCO" data-service="packages">Ver</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <p class="packages-note reveal">Preços e disponibilidade sujeitos a alteração sem aviso prévio. Consulte condições completas com um de nossos especialistas.</p>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="section steps">
+      <div class="container steps-layout">
+        <div class="section-heading reveal">
+          <span class="eyebrow"><span></span> Simples do início ao fim</span>
+          <h2>Você escolhe o destino. A gente ajuda com o caminho.</h2>
+          <a class="text-link" href="#buscar">Começar minha busca <span>→</span></a>
+        </div>
+        <ol class="steps-list">
+          <li class="reveal"><span>1</span><div><h3>Informe sua viagem</h3><p>Escolha voo, hotel, pacote ou carro, além de datas e número de viajantes.</p></div></li>
+          <li class="reveal"><span>2</span><div><h3>Compare as opções</h3><p>Consulte voos, hospedagens e pacotes disponíveis no ambiente de busca da Maximianos.</p></div></li>
+          <li class="reveal"><span>3</span><div><h3>Conte com nosso suporte</h3><p>Fale com a equipe para dúvidas, ajustes ou assistência durante toda a jornada.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- VANTAGENS / CLUBE -->
+    <section class="section" id="vantagens" style="background:#fff;">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow"><span></span> Amplie sua experiência</span>
+          <h2>Vantagens para quem viaja com a Maximianos.</h2>
+          <p>Serviços complementares para deixar sua viagem mais completa e tranquila.</p>
+        </div>
+
+        <div class="perks-grid">
+          <article class="perk-card reveal">
+            <div class="perk-icon"><img src="assets/img/icon-diamond.png" alt=""></div>
+            <h3>Programa de fidelidade</h3>
+            <p>Acumule pontos a cada viagem e troque por descontos em passagens futuras.</p>
+            <a class="text-link" href="#contato">Saiba mais <span>→</span></a>
+          </article>
+          <article class="perk-card reveal">
+            <div class="perk-icon"><img src="assets/img/icon-insurance-tab.png" alt=""></div>
+            <h3>Seguro viagem</h3>
+            <p>Proteção para imprevistos de saúde, bagagem e cancelamento durante a viagem.</p>
+            <a class="text-link" href="#contato">Saiba mais <span>→</span></a>
+          </article>
+          <article class="perk-card reveal">
+            <div class="perk-icon"><img src="assets/img/icon-exclusive-tab.png" alt=""></div>
+            <h3>Roteiros exclusivos</h3>
+            <p>Passeios e experiências selecionadas para complementar o seu pacote.</p>
+            <a class="text-link" href="#pacotes">Ver pacotes <span>→</span></a>
+          </article>
+          <article class="perk-card reveal">
+            <div class="perk-icon"><img src="assets/img/icon-check.png" alt=""></div>
+            <h3>Parcelamento facilitado</h3>
+            <p>Parcele sua viagem em até 10x no boleto ou no cartão de crédito.</p>
+            <a class="text-link" href="#contato">Saiba mais <span>→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PONTO DE APOIO NO AEROPORTO -->
+    <section class="section airport-section">
+      <div class="container airport-card reveal">
+        <div class="airport-visual"><img src="assets/img/gru-airport-presence.png" alt="Ilustração do Aeroporto Internacional de Guarulhos"></div><div class="airport-copy">
+          <span class="eyebrow"><span></span> Presença que faz diferença</span>
+          <h2>Dentro do maior aeroporto do Brasil.</h2>
+          <p>
+            A Maximianos está no Terminal 2, Check-In E, do Aeroporto Internacional de Guarulhos.
+            Um endereço real, uma equipe acessível e experiência prática no ecossistema aeroportuário —
+            ideal para quem quer tirar dúvidas sobre voos, hotéis e pacotes pessoalmente.
+          </p>
+          <div class="airport-meta">
+            <div><strong>Localização</strong><span>Terminal 2 · Check-In E</span></div>
+            <div><strong>Atendimento comercial</strong><span>Seg. a sex. · 9h às 19h</span></div>
+          </div>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Maximianos%20Terminal%202%20GRU"
+             target="_blank" rel="noopener">Ver localização</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="section testimonials" id="depoimentos">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow"><span></span> Experiências reais</span>
+          <h2>Quem viaja com apoio, viaja melhor.</h2>
+          <p>Relatos compartilhados por clientes da Maximianos.</p>
+        </div>
+
+        <div class="rating-summary reveal">
+          <div><strong>EXCELENTE</strong><span class="stars">★★★★★</span></div>
+          <p>Atendimento elogiado por agilidade, transparência e cuidado — inclusive na organização de pacotes completos.</p>
+        </div>
+
+        <div class="testimonial-track">
+          <article class="testimonial-card reveal">
+            <div class="stars">★★★★★</div>
+            <blockquote>“Excelente atendimento!”</blockquote>
+            <footer>Vanessa Pires</footer>
+          </article>
+          <article class="testimonial-card reveal">
+            <div class="stars">★★★★★</div>
+            <blockquote>“Super recomendo, tratamento que todos merecem ter!”</blockquote>
+            <footer>Erik e Jéssica</footer>
+          </article>
+          <article class="testimonial-card reveal">
+            <div class="stars">★★★★★</div>
+            <blockquote>“O atendimento deles é simplesmente incrível, recomendo 100%.”</blockquote>
+            <footer>Carlos Pisani</footer>
+          </article>
+          <article class="testimonial-card reveal">
+            <div class="stars">★★★★★</div>
+            <blockquote>“Agilidade, transparência e uma equipe muito atenciosa e disposta a resolver.”</blockquote>
+            <footer>Talita Ferreira Rodrigues</footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-section">
+      <div class="container faq-layout">
+        <div class="section-heading reveal">
+          <span class="eyebrow"><span></span> Dúvidas frequentes</span>
+          <h2>Antes de embarcar, deixe tudo claro.</h2>
+          <p>Não encontrou sua resposta? Nosso atendimento online funciona 24 horas via WhatsApp.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="reveal">
+            <summary>Vocês atendem viagens nacionais e internacionais?<span>+</span></summary>
+            <p>Sim. A equipe auxilia na busca e organização de voos, hotéis e pacotes dentro e fora do Brasil.</p>
+          </details>
+          <details class="reveal">
+            <summary>O que está incluso em um pacote de viagem?<span>+</span></summary>
+            <p>Os pacotes reúnem passagem aérea e hospedagem, podendo incluir café da manhã, traslados, seguro viagem e passeios, conforme o roteiro escolhido.</p>
+          </details>
+          <details class="reveal">
+            <summary>Posso parcelar minha viagem?<span>+</span></summary>
+            <p>Sim. Voos, hotéis e pacotes podem ser parcelados em até 10x no boleto ou no cartão de crédito, conforme a condição vigente.</p>
+          </details>
+          <details class="reveal">
+            <summary>A Maximianos fica realmente dentro do aeroporto?<span>+</span></summary>
+            <p>Sim. A agência está localizada no Terminal 2, Check-In E, do Aeroporto Internacional de Guarulhos.</p>
+          </details>
+          <details class="reveal">
+            <summary>Posso pedir ajuda com remarcação ou cancelamento?<span>+</span></summary>
+            <p>A equipe pode orientar e buscar alternativas conforme as regras da tarifa, do pacote e da companhia aérea.</p>
+          </details>
+          <details class="reveal">
+            <summary>O atendimento funciona 24 horas?<span>+</span></summary>
+            <p>O atendimento comercial ocorre de segunda a sexta, das 9h às 19h. O suporte online via WhatsApp funciona 24 horas.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-card reveal">
+          <div class="newsletter-copy">
+            <span class="eyebrow"><span></span> Fique por dentro</span>
+            <h2>Receba ofertas e novidades de viagem.</h2>
+            <p>Cadastre seu e-mail e seja avisado sobre promoções de voos, hotéis e pacotes.</p>
+          </div>
+          <form class="newsletter-form" id="newsletter-form">
+            <label class="sr-only" for="newsletter-email">Seu e-mail</label>
+            <input id="newsletter-email" type="email" placeholder="Seu melhor e-mail" required>
+            <button class="btn btn-gold" type="submit">Cadastrar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="final-cta">
+      <div class="container final-cta-inner reveal">
+        <div>
+          <span class="mini-label">Atendimento humano, de verdade</span>
+          <h2>Pronto para planejar sua próxima viagem?</h2>
+          <p>Busque seu voo, hotel ou pacote agora, ou fale diretamente com um especialista.</p>
+        </div>
+        <div class="final-actions">
+          <a class="btn btn-dark" href="#buscar">Buscar viagem</a>
+          <a class="btn btn-light js-track-whatsapp"
+             href="https://wa.me/551124453712?text=Ol%C3%A1%2C%20quero%20planejar%20minha%20pr%C3%B3xima%20viagem%20com%20a%20Maximianos."
+             target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contato">
+    <div class="container footer-grid footer-grid-wide">
+      <div class="footer-brand">
+        <a class="brand" href="#topo">
+          <img src="assets/img/logo-black.png" width="70" height="70" alt="">
+          <span>MAXIMIANOS</span>
+        </a>
+        <p>Voos, hotéis e pacotes de viagem com suporte exclusivo no Aeroporto Internacional de Guarulhos.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/maximianosviagens/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://wa.me/551124453712" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+        </div>
+      </div>
+
+      <div>
+        <h2>Viagem</h2>
+        <a href="#buscar">Buscar voos</a>
+        <a href="#buscar">Buscar hotéis</a>
+        <a href="#pacotes">Pacotes</a>
+        <a href="#destinos">Destinos</a>
+      </div>
+
+      <div>
+        <h2>Vantagens</h2>
+        <a href="#vantagens">Programa de fidelidade</a>
+        <a href="#vantagens">Seguro viagem</a>
+        <a href="#vantagens">Roteiros exclusivos</a>
+      </div>
+
+      <div>
+        <h2>Contato</h2>
+        <a href="tel:+551124453712">+55 (11) 2445-3712</a>
+        <a href="mailto:tur@maximianos.com.br">tur@maximianos.com.br</a>
+        <a href="https://www.instagram.com/maximianosviagens/" target="_blank" rel="noopener">@maximianosviagens</a>
+      </div>
+
+      <div>
+        <h2>Endereço</h2>
+        <p>Rod. Hélio Smidt S/N<br>GRU Airport · Terminal 2 · Check-In E<br>Cumbica · Guarulhos/SP · 07190-100</p>
+        <p style="margin-top:14px;">Comercial: seg. a sex., 9h às 19h<br>Suporte online 24h via WhatsApp</p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© <span id="current-year"></span> Maximianos. Todos os direitos reservados.</span>
+      <div><a href="#privacidade">Política de privacidade</a><a href="#termos">Termos de uso</a></div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float js-track-whatsapp"
+     href="https://wa.me/551124453712?text=Ol%C3%A1%2C%20vim%20pela%20landing%20page%20da%20Maximianos."
+     target="_blank" rel="noopener" aria-label="Falar com a Maximianos no WhatsApp">
+    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 2 17.7L.4 23.6l6-1.6A11.8 11.8 0 0 0 12 23.4h.1A11.8 11.8 0 0 0 20.5 3.5zM12.1 21.4h-.1a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.6 1 1-3.5-.3-.4A9.8 9.8 0 1 1 12 21.4zm5.4-7.3c-.3-.1-1.8-.9-2.1-1s-.5-.1-.7.2-.8 1-1 1.2-.4.2-.7.1a8 8 0 0 1-2.3-1.4A8.7 8.7 0 0 1 9 11.1c-.2-.3 0-.5.1-.7l.5-.6.2-.6c.1-.2 0-.5 0-.7L8.8 6c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.9 5.2.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg>
+  </a>
+
+  <div class="mobile-bar">
+    <a href="#buscar">Buscar voo</a>
+    <a class="js-track-whatsapp"
+       href="https://wa.me/551124453712?text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20com%20uma%20viagem."
+       target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+
+  <script>
+    // Newsletter: formulário local (sem backend) — substitua pela integração desejada (ex.: Mailchimp, RD Station).
+    document.getElementById('newsletter-form')?.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const email = document.getElementById('newsletter-email').value;
+      window.open('https://wa.me/551124453712?text=' + encodeURIComponent('Olá, quero receber novidades de viagem. Meu e-mail: ' + email), '_blank', 'noopener');
+      this.reset();
+    });
+
+    // Preenche o buscador ao clicar em "Ver" / "Aproveitar oferta" nas ofertas, destinos e pacotes.
+    document.querySelectorAll('.js-fill-search').forEach(function (link) {
+      link.addEventListener('click', function () {
+        const destino = this.dataset.destino;
+        const service = this.dataset.service;
+
+        if (service) {
+          const tab = document.querySelector('.booking-tab[data-service="' + service + '"]');
+          if (tab && !tab.classList.contains('active')) tab.click();
+        }
+
+        if (destino) {
+          const destinationInput = document.getElementById('destination');
+          if (destinationInput) {
+            destinationInput.value = destino;
+            destinationInput.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        }
+      });
+    });
+  </script>
+
+  <datalist id="airports">
+    <option value="São Paulo - GRU" data-iata="GRU" data-city="São Paulo" data-country="Brasil" data-name="São Paulo - (GRU - Guarulhos - Governador André Franco Montoro International Airport)">
+    <option value="São Paulo - CGH" data-iata="CGH" data-city="São Paulo" data-country="Brasil" data-name="São Paulo - (CGH - Congonhas Airport)">
+    <option value="Campinas - VCP" data-iata="VCP" data-city="Campinas" data-country="Brasil" data-name="Campinas - (VCP - Viracopos International Airport)">
+    <option value="Rio de Janeiro - GIG" data-iata="GIG" data-city="Rio de Janeiro" data-country="Brasil" data-name="Rio de Janeiro - (GIG - Galeão International Airport)">
+    <option value="Rio de Janeiro - SDU" data-iata="SDU" data-city="Rio de Janeiro" data-country="Brasil" data-name="Rio de Janeiro - (SDU - Santos Dumont Airport)">
+    <option value="Brasília - BSB" data-iata="BSB" data-city="Brasília" data-country="Brasil" data-name="Brasília - (BSB - Presidente Juscelino Kubitschek International Airport)">
+    <option value="Belo Horizonte - CNF" data-iata="CNF" data-city="Belo Horizonte" data-country="Brasil" data-name="Belo Horizonte - (CNF - Tancredo Neves International Airport)">
+    <option value="Recife - REC" data-iata="REC" data-city="Recife" data-country="Brasil" data-name="Recife - (REC - Guararapes - Gilberto Freyre International Airport)" data-hotel-id="3326" data-location-type="1">
+    <option value="Salvador - SSA" data-iata="SSA" data-city="Salvador" data-country="Brasil" data-name="Salvador - (SSA - Deputado Luís Eduardo Magalhães International Airport)">
+    <option value="Fortaleza - FOR" data-iata="FOR" data-city="Fortaleza" data-country="Brasil" data-name="Fortaleza - (FOR - Pinto Martins International Airport)">
+    <option value="Maceió - MCZ" data-iata="MCZ" data-city="Maceió" data-country="Brasil" data-name="Maceió - (MCZ - Zumbi dos Palmares International Airport)">
+    <option value="Natal - NAT" data-iata="NAT" data-city="Natal" data-country="Brasil" data-name="Natal - (NAT - Governador Aluízio Alves International Airport)">
+    <option value="Porto Alegre - POA" data-iata="POA" data-city="Porto Alegre" data-country="Brasil" data-name="Porto Alegre - (POA - Salgado Filho International Airport)">
+    <option value="Curitiba - CWB" data-iata="CWB" data-city="Curitiba" data-country="Brasil" data-name="Curitiba - (CWB - Afonso Pena International Airport)">
+    <option value="Florianópolis - FLN" data-iata="FLN" data-city="Florianópolis" data-country="Brasil" data-name="Florianópolis - (FLN - Hercílio Luz International Airport)">
+    <option value="Manaus - MAO" data-iata="MAO" data-city="Manaus" data-country="Brasil" data-name="Manaus - (MAO - Eduardo Gomes International Airport)">
+    <option value="Belém - BEL" data-iata="BEL" data-city="Belém" data-country="Brasil" data-name="Belém - (BEL - Val de Cans International Airport)">
+    <option value="Goiânia - GYN" data-iata="GYN" data-city="Goiânia" data-country="Brasil" data-name="Goiânia - (GYN - Santa Genoveva Airport)">
+    <option value="Foz do Iguaçu - IGU" data-iata="IGU" data-city="Foz do Iguaçu" data-country="Brasil" data-name="Foz do Iguaçu - (IGU - Cataratas International Airport)">
+    <option value="Lisboa - LIS" data-iata="LIS" data-city="Lisboa" data-country="Portugal" data-name="Lisboa - (LIS - Humberto Delgado Airport)">
+    <option value="Miami - MIA" data-iata="MIA" data-city="Miami" data-country="Estados Unidos" data-name="Miami - (MIA - Miami International Airport)">
+    <option value="Orlando - MCO" data-iata="MCO" data-city="Orlando" data-country="Estados Unidos" data-name="Orlando - (MCO - Orlando International Airport)">
+    <option value="Nova York - JFK" data-iata="JFK" data-city="Nova York" data-country="Estados Unidos" data-name="Nova York - (JFK - John F. Kennedy International Airport)">
+    <option value="Paris - CDG" data-iata="CDG" data-city="Paris" data-country="França" data-name="Paris - (CDG - Charles de Gaulle Airport)">
+    <option value="Londres - LHR" data-iata="LHR" data-city="Londres" data-country="Reino Unido" data-name="Londres - (LHR - Heathrow Airport)">
+    <option value="Madrid - MAD" data-iata="MAD" data-city="Madrid" data-country="Espanha" data-name="Madrid - (MAD - Adolfo Suárez Madrid-Barajas Airport)">
+    <option value="Buenos Aires - EZE" data-iata="EZE" data-city="Buenos Aires" data-country="Argentina" data-name="Buenos Aires - (EZE - Ministro Pistarini International Airport)">
+    <option value="Santiago - SCL" data-iata="SCL" data-city="Santiago" data-country="Chile" data-name="Santiago - (SCL - Arturo Merino Benítez International Airport)">
+    <option value="Bariloche - BRC" data-iata="BRC" data-city="Bariloche" data-country="Argentina" data-name="Bariloche - (BRC - Teniente Luis Candelaria Airport)">
+    <option value="Punta del Este - PDP" data-iata="PDP" data-city="Punta del Este" data-country="Uruguai" data-name="Punta del Este - (PDP - Capitán Corbeta CA Curbelo International Airport)">
+    <option value="Cancún - CUN" data-iata="CUN" data-city="Cancún" data-country="México" data-name="Cancún - (CUN - Cancún International Airport)">
+    <option value="Roma - FCO" data-iata="FCO" data-city="Roma" data-country="Itália" data-name="Roma - (FCO - Leonardo da Vinci–Fiumicino Airport)">
+  </datalist>
+</body>
+</html>
