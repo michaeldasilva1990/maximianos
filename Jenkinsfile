@@ -132,13 +132,33 @@ pipeline {
                         set -e
                         DEST="$DEPLOY_USER@$DEPLOY_HOST"
 
-                        echo "--- app direto (porta 9000) ---"
-                        ssh $SSH_OPTS "$DEST" "curl -fsS http://127.0.0.1:9000/health" && echo
+                        echo "--- health do app (porta 9000) ---"
+                        ssh $SSH_OPTS "$DEST" "curl -fsS --max-time 10 http://127.0.0.1:9000/health" && echo
 
-                        echo "--- passando pelo nginx ---"
-                        ssh $SSH_OPTS "$DEST" \
-                            "curl -fsS -o /dev/null -w 'nginx: %{http_code}\\n' \
-                             -H 'Host: maximianos.com.br' http://127.0.0.1/"
+                        # O health so prova que o processo subiu. Isto prova que
+                        # ele esta de fato servindo a pagina.
+                        echo "--- a home devolve HTML? ---"
+                        if ssh $SSH_OPTS "$DEST" "curl -fsS --max-time 10 http://127.0.0.1:9000/ | grep -qi '<title'"; then
+                            echo "HTML OK"
+                        else
+                            echo "ERRO: a home nao devolveu HTML valido"
+                            exit 1
+                        fi
+
+                        echo "--- nginx ---"
+                        codigo=$(ssh $SSH_OPTS "$DEST" "curl -s -o /dev/null -w '%{http_code}' --max-time 10 -H 'Host: maximianos.com.br' http://127.0.0.1/")
+                        echo "nginx: $codigo"
+                        case "$codigo" in
+                            200|301|302) ;;
+                            *) echo "ERRO: nginx respondeu $codigo"; exit 1 ;;
+                        esac
+
+                        # Fim a fim, passando pelo Cloudflare. Nao derruba o build se
+                        # falhar: pode ser instabilidade externa e o app local ja foi
+                        # validado acima.
+                        echo "--- dominio publico ---"
+                        ssh $SSH_OPTS "$DEST" "curl -fsSL -o /dev/null -w 'publico: %{http_code}\n' --max-time 20 https://maximianos.com.br/" \
+                            || echo "AVISO: nao validou pelo dominio publico (Cloudflare/DNS); o app local esta OK"
                     '''
                 }
             }
