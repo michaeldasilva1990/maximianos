@@ -1,0 +1,22 @@
+{
+  "name": "maximianos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Servidor estatico do site Maximianos",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:restart": "pm2 restart maximianos",
+    "pm2:stop": "pm2 stop maximianos",
+    "pm2:logs": "pm2 logs maximianos"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "compression": "^1.7.5",
+    "express": "^4.21.2"
+  }
+}
