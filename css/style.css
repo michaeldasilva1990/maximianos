@@ -809,3 +809,73 @@ h3, .service-card h3, .steps-list h3 { font-size: 1.8rem !important; }
   #flight-search { padding-inline: 8px; }
   .calendar-months { padding-inline: 18px; }
 }
+
+/* =========================================================
+   MOBILE — correção definitiva de overflow horizontal
+   Mantém o desktop intacto e impede elementos do hero/cards
+   de aumentarem a largura da viewport em telas pequenas.
+   ========================================================= */
+@media (max-width: 760px) {
+  html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* No mobile os popovers já são fixed, então o hero pode recortar
+     somente os elementos decorativos que avançam para fora da tela. */
+  .hero {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .hero-inner,
+  .container,
+  .site-header,
+  .mobile-menu,
+  main,
+  section,
+  footer {
+    max-width: 100%;
+  }
+
+  /* Evita que itens flex/grid usem a largura intrínseca do conteúdo. */
+  .hero-inner > *,
+  .search-shell > *,
+  .booking-widget > *,
+  .booking-options > *,
+  .modern-search > *,
+  .newsletter-card > *,
+  .footer-grid > * {
+    min-width: 0;
+  }
+
+  /* Componentes que podem conter textos/botões longos. */
+  .search-topline,
+  .booking-options,
+  .package-footer,
+  .footer-apps {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .footer-apps span,
+  .conditions-link,
+  .text-link {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Elementos decorativos não participam da largura visual da página. */
+  .hero-glow,
+  .travel-orbit {
+    max-width: 100vw;
+  }
+}
