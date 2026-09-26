@@ -78,10 +78,21 @@ app.use(
     index: 'index.html',
     extensions: ['html'],
     dotfiles: 'ignore',
-    maxAge: '7d',
+    etag: true,
+    lastModified: true,
     setHeaders: (res, filePath) => {
-      if (filePath.endsWith('.html')) {
+      if (/\.(html?|css|js|mjs|json|webmanifest)$/i.test(filePath)) {
+        // Revalida sempre. Como o Express manda ETag, o navegador continua
+        // reaproveitando o arquivo e recebe 304 quando nada mudou - mas uma
+        // alteracao aparece no mesmo instante do deploy, sem esperar cache.
         res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+      } else {
+        // Imagens, video e fontes: pesados e raramente alterados. Um dia de
+        // cache, e depois disso o ETag evita baixar de novo o que nao mudou.
+        // Nao usamos max-age longo porque os arquivos sao substituidos no
+        // lugar, sem hash no nome - com 7 dias, trocar uma imagem demorava
+        // uma semana para aparecer.
+        res.setHeader('Cache-Control', 'public, max-age=86400');
       }
     },
   })

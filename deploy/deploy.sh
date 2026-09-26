@@ -55,6 +55,28 @@ rm -rf "$RELEASE_DIR/logs"
 ln -sfn "$APP_DIR/shared/logs" "$RELEASE_DIR/logs"
 
 # ---------------------------------------------------------------
+# Cache busting
+#
+# O dominio passa por um CDN (Cloudflare) que guarda cache por URL e
+# ignora o fato de termos publicado versao nova. Como nao temos acesso ao
+# painel para dar purge, mudamos a URL: cada release acrescenta ?v=<release>
+# nas referencias locais de css/js. URL nova = o CDN nunca viu = ele busca
+# na origem. Referencias externas (http://, //, data:) ficam intactas.
+# ---------------------------------------------------------------
+log "aplicando cache busting nos assets..."
+python3 - "$RELEASE_DIR" "$RELEASE" <<'PYEOF'
+import re, sys, pathlib
+raiz, release = pathlib.Path(sys.argv[1]), sys.argv[2]
+padrao = re.compile(r'((?:href|src)=")(?!https?:|//|data:|#)([^"?]+\.(?:css|js))(")')
+for arquivo in sorted(set(list(raiz.glob('*.html')) + list(raiz.glob('*/*.html')))):
+    texto = arquivo.read_text(encoding='utf-8', errors='surrogateescape')
+    novo = padrao.sub(lambda m: m.group(1) + m.group(2) + '?v=' + release + m.group(3), texto)
+    if novo != texto:
+        arquivo.write_text(novo, encoding='utf-8', errors='surrogateescape')
+        print('[deploy]   ' + arquivo.name + ': referencias versionadas')
+PYEOF
+
+# ---------------------------------------------------------------
 # Troca o symlink de forma atomica (ln -T + mv nao deixa janela
 # em que o current aponta pra lugar nenhum)
 # ---------------------------------------------------------------
