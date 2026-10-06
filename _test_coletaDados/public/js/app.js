@@ -371,9 +371,6 @@
     if ((activeService === "flights" || activeService === "packages") && origin && destination && origin.iata === destination.iata) {
       setError(destinationInput, "Origem e destino precisam ser diferentes."); ok = false;
     }
-    if ((activeService === "hotels" || activeService === "packages") && destination && !destination.hotelId) {
-      setError(destinationInput, "Este destino ainda não possui o ID de hotel configurado."); ok = false;
-    }
     if (!selectedStart) { setError(departureInput, "Escolha a data inicial."); ok = false; } else setError(departureInput, "");
     if (needsReturnDate() && !selectedEnd) { setError(returnInput, "Escolha a data final."); ok = false; } else setError(returnInput, "");
     return { ok, origin, destination, round };
@@ -485,7 +482,10 @@
 
     const builders = { flights: buildFlightUrl, hotels: buildHotelUrl, packages: buildPackageUrl, cars: buildCarUrl };
     track("travel_service_search", { service: activeService });
-    const targetUrl = builders[activeService](data);
+    // Hotéis/pacotes só têm busca online nos destinos com ID do parceiro (ver HOTEL_IDS em airports.js).
+    // A pesquisa é registrada de qualquer forma; sem parceiro, o cliente é encaminhado ao WhatsApp.
+    const hasPartner = !((activeService === "hotels" || activeService === "packages") && !data.destination.hotelId);
+    const targetUrl = hasPartner ? builders[activeService](data) : "";
     const place = (a, typed) => a ? { iata: a.iata, city: a.city, country: a.country, name: a.name, typed } : undefined;
     window.MaximianosAPI?.logSearch({
       service: activeService,
@@ -497,9 +497,17 @@
       travelers: { ...travelers },
       directOnly: activeService === "flights" && directOnlyInput.checked,
       car: activeService === "cars" ? { differentLocation: differentLocationInput.checked, pickupTime: pickupTime.value, returnTime: returnTime.value } : undefined,
+      redirected: hasPartner,
       redirectUrl: targetUrl
     });
-    window.location.href = targetUrl;
+    if (hasPartner) {
+      window.location.href = targetUrl;
+    } else {
+      const where = activeService === "packages" ? `${data.origin.city} → ${data.destination.city}` : data.destination.city;
+      const msg = `Olá, vim pelo site da Maximianos e quero cotar ${activeService === "packages" ? "um pacote (voo + hotel)" : "hotel"}: ${where}, de ${fmt(selectedStart)}${selectedEnd ? ` a ${fmt(selectedEnd)}` : ""}, ${travelers.adults} adulto(s)${travelers.children ? `, ${travelers.children} criança(s)` : ""}.`;
+      track("whatsapp_quote_redirect", { service: activeService });
+      window.open(`https://wa.me/5511968621806?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
+    }
   };
 
   document.addEventListener("click", (event) => {
@@ -536,7 +544,6 @@
       }
     });
     window.MaximianosAirports.attach(destinationInput, {
-      requiresHotel: () => activeService === "hotels" || activeService === "packages",
       onSelect: () => {
         // adiado para o clique da lista não fechar o calendário logo em seguida
         if (!selectedStart) setTimeout(() => document.querySelector("#departure-date-button")?.click(), 0);

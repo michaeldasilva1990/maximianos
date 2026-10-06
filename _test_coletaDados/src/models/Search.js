@@ -16,6 +16,7 @@ const searchSchema = new Schema({
   travelers: { adults: Number, children: Number, infants: Number, rooms: Number },
   directOnly: Boolean,
   car: { differentLocation: Boolean, pickupTime: String, returnTime: String },
+  redirected: { type: Boolean, default: true }, // false = sem parceiro online (encaminhado ao WhatsApp)
   redirectUrl: String, // URL do parceiro para onde o usuário foi enviado
   userAgent: String,
   ipHash: String

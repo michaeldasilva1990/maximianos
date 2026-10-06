@@ -81,6 +81,7 @@ router.post('/searches', limiter(120), async (req, res, next) => {
       travelers: { adults: int(t.adults, 0, 9, 1), children: int(t.children, 0, 9, 0), infants: int(t.infants, 0, 9, 0), rooms: int(t.rooms, 1, 9, 1) },
       directOnly: b.directOnly === true,
       car: b.service === 'cars' ? { differentLocation: car.differentLocation === true, pickupTime: str(car.pickupTime, 5), returnTime: str(car.returnTime, 5) } : undefined,
+      redirected: b.redirected !== false,
       redirectUrl: str(b.redirectUrl, 2000),
       userAgent: str(req.get('user-agent'), 300),
       ipHash: hash(req.ip)
@@ -128,7 +129,8 @@ router.get('/admin/searches', limiter(60), adminAuth, async (req, res, next) => 
         destino_iata: s.destination?.iata, destino_cidade: s.destination?.city,
         ida: s.departureDate, volta: s.returnDate,
         adultos: s.travelers?.adults, criancas: s.travelers?.children, bebes: s.travelers?.infants, quartos: s.travelers?.rooms,
-        somente_diretos: s.directOnly ? 'sim' : 'nao'
+        somente_diretos: s.directOnly ? 'sim' : 'nao',
+        redirecionado_parceiro: s.redirected === false ? 'nao' : 'sim'
       }));
       return sendCsv(res, 'pesquisas.csv', rows);
     }
