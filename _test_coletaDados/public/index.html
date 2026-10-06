@@ -32,6 +32,8 @@
   </script>
 <link as="image" href="assets/img/logo.png" rel="preload"/>
 <link href="css/style.css" rel="stylesheet"/>
+<script defer="" src="js/airports.js"></script>
+<script defer="" src="js/airport-picker.js"></script>
 <script defer="" src="js/lead-gate.js"></script>
 <script defer="" src="js/app.js"></script>
 <script type="application/ld+json">
@@ -177,9 +179,9 @@ src="https://www.facebook.com/tr?id=1517865403730743&ev=PageView&noscript=1"
 </div>
 </div>
 <div class="search-horizontal modern-search">
-<label class="field"><span>Origem</span><div class="input-wrap"><img alt="" src="assets/img/icon-plane.png"/><input autocomplete="off" id="origin" list="airports" name="origin" placeholder="De onde você vai sair?" required="" type="text"/></div><small class="error-text"></small></label>
+<label class="field"><span>Origem</span><div class="input-wrap"><img alt="" src="assets/img/icon-plane.png"/><input autocomplete="off" id="origin" name="origin" placeholder="De onde você vai sair?" required="" type="text"/></div><small class="error-text"></small></label>
 <button aria-label="Inverter origem e destino" class="swap-route" type="button"><img alt="" src="assets/img/icon-refresh.png"/></button>
-<label class="field"><span>Destino</span><div class="input-wrap"><img alt="" src="assets/img/icon-pin.png"/><input autocomplete="off" id="destination" list="airports" name="destination" placeholder="Para onde você vai?" required="" type="text"/></div><small class="error-text"></small></label>
+<label class="field"><span>Destino</span><div class="input-wrap"><img alt="" src="assets/img/icon-pin.png"/><input autocomplete="off" id="destination" name="destination" placeholder="Para onde você vai?" required="" type="text"/></div><small class="error-text"></small></label>
 <div class="field date-field"><span>Ida</span><button class="date-trigger" id="departure-date-button" type="button"><span id="departure-date-label">Escolha a data</span></button><input id="departure-date" name="departureDate" type="hidden"/><small class="error-text"></small></div>
 <div class="field return-field date-field"><span>Volta</span><button class="date-trigger" id="return-date-button" type="button"><span id="return-date-label">Escolha a data</span></button><input id="return-date" name="returnDate" type="hidden"/><small class="error-text"></small></div>
 <label class="field car-time-field" hidden=""><span>Hora da retirada</span><select id="pickup-time"><option>08:00</option><option>09:00</option><option selected="">10:00</option><option>11:00</option><option>12:00</option><option>14:00</option><option>16:00</option><option>18:00</option><option>20:00</option></select></label>
@@ -971,41 +973,6 @@ src="https://www.facebook.com/tr?id=1517865403730743&ev=PageView&noscript=1"
       });
     });
   </script>
-<datalist id="airports">
-<option data-city="São Paulo" data-country="Brasil" data-iata="GRU" data-name="São Paulo - (GRU - Guarulhos - Governador André Franco Montoro International Airport)" value="São Paulo - GRU">
-<option data-city="São Paulo" data-country="Brasil" data-iata="CGH" data-name="São Paulo - (CGH - Congonhas Airport)" value="São Paulo - CGH">
-<option data-city="Campinas" data-country="Brasil" data-iata="VCP" data-name="Campinas - (VCP - Viracopos International Airport)" value="Campinas - VCP">
-<option data-city="Rio de Janeiro" data-country="Brasil" data-iata="GIG" data-name="Rio de Janeiro - (GIG - Galeão International Airport)" value="Rio de Janeiro - GIG">
-<option data-city="Rio de Janeiro" data-country="Brasil" data-iata="SDU" data-name="Rio de Janeiro - (SDU - Santos Dumont Airport)" value="Rio de Janeiro - SDU">
-<option data-city="Brasília" data-country="Brasil" data-iata="BSB" data-name="Brasília - (BSB - Presidente Juscelino Kubitschek International Airport)" value="Brasília - BSB">
-<option data-city="Belo Horizonte" data-country="Brasil" data-iata="CNF" data-name="Belo Horizonte - (CNF - Tancredo Neves International Airport)" value="Belo Horizonte - CNF">
-<option data-city="Recife" data-country="Brasil" data-hotel-id="3326" data-iata="REC" data-location-type="1" data-name="Recife - (REC - Guararapes - Gilberto Freyre International Airport)" value="Recife - REC">
-<option data-city="Salvador" data-country="Brasil" data-iata="SSA" data-name="Salvador - (SSA - Deputado Luís Eduardo Magalhães International Airport)" value="Salvador - SSA">
-<option data-city="Fortaleza" data-country="Brasil" data-iata="FOR" data-name="Fortaleza - (FOR - Pinto Martins International Airport)" value="Fortaleza - FOR">
-<option data-city="Maceió" data-country="Brasil" data-iata="MCZ" data-name="Maceió - (MCZ - Zumbi dos Palmares International Airport)" value="Maceió - MCZ">
-<option data-city="Natal" data-country="Brasil" data-iata="NAT" data-name="Natal - (NAT - Governador Aluízio Alves International Airport)" value="Natal - NAT">
-<option data-city="Porto Alegre" data-country="Brasil" data-iata="POA" data-name="Porto Alegre - (POA - Salgado Filho International Airport)" value="Porto Alegre - POA">
-<option data-city="Curitiba" data-country="Brasil" data-iata="CWB" data-name="Curitiba - (CWB - Afonso Pena International Airport)" value="Curitiba - CWB">
-<option data-city="Florianópolis" data-country="Brasil" data-iata="FLN" data-name="Florianópolis - (FLN - Hercílio Luz International Airport)" value="Florianópolis - FLN">
-<option data-city="Manaus" data-country="Brasil" data-iata="MAO" data-name="Manaus - (MAO - Eduardo Gomes International Airport)" value="Manaus - MAO">
-<option data-city="Belém" data-country="Brasil" data-iata="BEL" data-name="Belém - (BEL - Val de Cans International Airport)" value="Belém - BEL">
-<option data-city="Goiânia" data-country="Brasil" data-iata="GYN" data-name="Goiânia - (GYN - Santa Genoveva Airport)" value="Goiânia - GYN">
-<option data-city="Foz do Iguaçu" data-country="Brasil" data-iata="IGU" data-name="Foz do Iguaçu - (IGU - Cataratas International Airport)" value="Foz do Iguaçu - IGU">
-<option data-city="Lisboa" data-country="Portugal" data-iata="LIS" data-name="Lisboa - (LIS - Humberto Delgado Airport)" value="Lisboa - LIS">
-<option data-city="Miami" data-country="Estados Unidos" data-iata="MIA" data-name="Miami - (MIA - Miami International Airport)" value="Miami - MIA">
-<option data-city="Orlando" data-country="Estados Unidos" data-iata="MCO" data-name="Orlando - (MCO - Orlando International Airport)" value="Orlando - MCO">
-<option data-city="Nova York" data-country="Estados Unidos" data-iata="JFK" data-name="Nova York - (JFK - John F. Kennedy International Airport)" value="Nova York - JFK">
-<option data-city="Paris" data-country="França" data-iata="CDG" data-name="Paris - (CDG - Charles de Gaulle Airport)" value="Paris - CDG">
-<option data-city="Londres" data-country="Reino Unido" data-iata="LHR" data-name="Londres - (LHR - Heathrow Airport)" value="Londres - LHR">
-<option data-city="Madrid" data-country="Espanha" data-iata="MAD" data-name="Madrid - (MAD - Adolfo Suárez Madrid-Barajas Airport)" value="Madrid - MAD">
-<option data-city="Buenos Aires" data-country="Argentina" data-iata="EZE" data-name="Buenos Aires - (EZE - Ministro Pistarini International Airport)" value="Buenos Aires - EZE">
-<option data-city="Santiago" data-country="Chile" data-iata="SCL" data-name="Santiago - (SCL - Arturo Merino Benítez International Airport)" value="Santiago - SCL">
-<option data-city="Bariloche" data-country="Argentina" data-iata="BRC" data-name="Bariloche - (BRC - Teniente Luis Candelaria Airport)" value="Bariloche - BRC">
-<option data-city="Punta del Este" data-country="Uruguai" data-iata="PDP" data-name="Punta del Este - (PDP - Capitán Corbeta CA Curbelo International Airport)" value="Punta del Este - PDP">
-<option data-city="Cancún" data-country="México" data-iata="CUN" data-name="Cancún - (CUN - Cancún International Airport)" value="Cancún - CUN">
-<option data-city="Roma" data-country="Itália" data-iata="FCO" data-name="Roma - (FCO - Leonardo da Vinci–Fiumicino Airport)" value="Roma - FCO">
-</option></option></option></option></option></option></option></option></option></option></option></option></option></option></option></option></option></option></option></option></option></option></option></option></option></option></option></option></option></option></option></option></datalist>
-
 <script> window.$zoho = window.$zoho || {}; $zoho.salesiq = $zoho.salesiq || { ready: function(){} }; </script> <script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siqc0ac1ffd15de77785cca3b9b39b07a63d0561bd35dce35da071785a7ff885619" defer> </script>
 </body>
 </html>

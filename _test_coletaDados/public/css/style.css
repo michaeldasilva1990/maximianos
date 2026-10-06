@@ -907,3 +907,47 @@ body.lead-open { overflow: hidden; }
 .lead-error { display: block; min-height: 1em; color: #b3261e; font-size: .78rem; margin-top: 4px; }
 .lead-submit { width: 100%; margin-top: 10px; }
 .lead-submit:disabled { opacity: .7; cursor: wait; }
+
+/* ===== Busca de aeroportos (autocomplete) ===== */
+.ap-list {
+  position: fixed; z-index: 2000; overflow-y: auto; overscroll-behavior: contain;
+  background: #fff; border: 1px solid var(--line); border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(60, 46, 28, .22), 0 2px 8px rgba(60, 46, 28, .06);
+  padding: 6px; scrollbar-width: thin; scrollbar-color: rgba(201,149,37,.45) transparent;
+  animation: ap-in .14s ease-out;
+}
+.ap-list[hidden] { display: none; }
+@keyframes ap-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+.ap-section {
+  padding: 10px 12px 6px; font-size: .66rem; font-weight: 800; letter-spacing: .09em;
+  text-transform: uppercase; color: #a1670f;
+}
+.ap-item {
+  display: flex; align-items: center; gap: 12px; padding: 9px 12px; border-radius: 12px;
+  cursor: pointer; transition: background .12s ease;
+}
+.ap-item.is-active { background: var(--surface-2); box-shadow: inset 3px 0 0 var(--gold); }
+.ap-ico {
+  flex: none; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--sand); color: #b27d12;
+}
+.ap-ico svg { width: 18px; height: 18px; fill: currentColor; transform: rotate(45deg); }
+.ap-main { flex: 1; min-width: 0; display: flex; flex-direction: column; line-height: 1.3; }
+.ap-city { font-weight: 700; font-size: .92rem; color: #3b342d; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ap-sub { font-size: .74rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ap-list mark { background: rgba(240, 201, 101, .55); color: inherit; border-radius: 3px; padding: 0 1px; }
+.ap-code {
+  flex: none; min-width: 48px; text-align: center; padding: 5px 9px; border-radius: 9px;
+  font-size: .78rem; font-weight: 800; letter-spacing: .06em; color: #8a5f0c; background: var(--sand);
+}
+.ap-item.is-active .ap-code { background: var(--gold); color: #fff; }
+.ap-item.is-disabled { cursor: not-allowed; opacity: .5; }
+.ap-tag { flex: none; font-size: .68rem; font-weight: 700; color: var(--muted); padding: 4px 8px; border-radius: 8px; background: #f3f0ea; }
+.ap-hint { padding: 10px 12px 6px; font-size: .72rem; color: var(--muted); border-top: 1px solid var(--line); margin-top: 4px; }
+.ap-empty { display: flex; flex-direction: column; gap: 4px; padding: 22px 16px; text-align: center; font-size: .82rem; color: var(--muted); }
+.ap-empty strong { color: #3b342d; }
+@media (max-width: 640px) {
+  .ap-item { padding: 11px 10px; }
+  .ap-ico { width: 40px; height: 40px; }
+  .ap-city { font-size: 1rem; }
+}

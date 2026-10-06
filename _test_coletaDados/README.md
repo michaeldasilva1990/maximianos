@@ -73,3 +73,9 @@ Se o front-end ficar em outro domínio, defina `window.MAXIMIANOS_API_BASE` ante
 3. Em *Settings → Environment Variables* crie `MONGODB_URI`, `ADMIN_TOKEN` e `IP_SALT` (Production, Preview e Development).
 4. Faça *Redeploy* (variáveis só valem para deploys novos).
 5. Teste: abra o site, preencha o formulário e confira a coleção `leads` no Atlas.
+
+## Aeroportos e busca (origem/destino)
+
+- `public/js/airports.js` — base com **531 aeroportos**: Brasil (164, todos com código IATA e voos comerciais regulares) e os principais de Américas, Europa, África, Ásia e Oceania. Cada linha é `[IATA, cidade, aeroporto, país, região, popular, apelidos]`; para adicionar um aeroporto, inclua uma linha na região correta.
+- `public/js/airport-picker.js` — campo com autocomplete: busca sem acento por cidade, aeroporto, código IATA, país ou apelido ("new york", "tokyo"…), destaque do trecho encontrado, navegação por teclado (↑ ↓ Enter Esc Tab) e sugestões populares ao focar o campo vazio.
+- **Hotéis e pacotes (Voo + Hotel)** só funcionam para destinos com o ID do parceiro. Para liberar um destino, adicione `IATA: "ID"` em `HOTEL_IDS` no topo de `airports.js` (hoje só `REC`). Destinos sem ID aparecem como "Só voos" nessas abas.

@@ -35,14 +35,9 @@
   let activeService = "flights";
   let calendarSelectionMode = "departure";
 
-  const airportOptions = [...document.querySelectorAll("#airports option")].map((o) => ({
-    value: o.value,
-    iata: o.dataset.iata,
-    city: o.dataset.city,
-    country: o.dataset.country,
-    name: o.dataset.name,
-    hotelId: o.dataset.hotelId || "",
-    locationType: o.dataset.locationType || "1"
+  const airportOptions = (window.MAXIMIANOS_AIRPORTS || []).map((a) => ({
+    value: a.value, iata: a.iata, city: a.city, country: a.country, name: a.name,
+    hotelId: a.hotelId || "", locationType: a.locationType || "1"
   }));
 
   function localISO(date) {
@@ -64,9 +59,16 @@
   function track(event, data = {}) { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event, ...data }); }
 
   function findAirport(raw) {
-    const value = raw.trim().toLowerCase();
-    const code = raw.toUpperCase().match(/\b[A-Z]{3}\b/);
-    return airportOptions.find((a) => a.value.toLowerCase() === value || a.iata.toLowerCase() === value || (code && a.iata === code[0]));
+    const text = raw.trim();
+    if (!text) return null;
+    const lower = text.toLowerCase();
+    const plain = (v) => v.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    const exact = airportOptions.find((a) => a.value.toLowerCase() === lower || a.iata.toLowerCase() === lower);
+    if (exact) return exact;
+    const byCity = airportOptions.find((a) => plain(a.city) === plain(text));
+    if (byCity) return byCity;
+    const code = text.toUpperCase().match(/(?:^|[-–—(\s])([A-Z]{3})\)?\s*$/);
+    return (code && airportOptions.find((a) => a.iata === code[1])) || null;
   }
   function inferAirport(raw) {
     const found = findAirport(raw);
@@ -364,8 +366,8 @@
     const destination = inferAirport(destinationInput.value);
     const round = isRoundTrip();
 
-    if (activeService !== "hotels" && !origin) { setError(originInput, "Selecione um local com código IATA."); ok = false; } else setError(originInput, "");
-    if (!destination) { setError(destinationInput, "Selecione um destino com código IATA."); ok = false; } else setError(destinationInput, "");
+    if (activeService !== "hotels" && !origin) { setError(originInput, "Escolha um aeroporto ou cidade da lista."); ok = false; } else setError(originInput, "");
+    if (!destination) { setError(destinationInput, "Escolha um aeroporto ou cidade da lista."); ok = false; } else setError(destinationInput, "");
     if ((activeService === "flights" || activeService === "packages") && origin && destination && origin.iata === destination.iata) {
       setError(destinationInput, "Origem e destino precisam ser diferentes."); ok = false;
     }
@@ -525,6 +527,22 @@
   addEventListener("scroll", () => header?.classList.toggle("scrolled", scrollY > 12), { passive: true });
   const year = document.querySelector("#current-year");
   if (year) year.textContent = new Date().getFullYear();
+
+  if (window.MaximianosAirports) {
+    window.MaximianosAirports.attach(originInput, {
+      onSelect: () => {
+        const label = destinationInput.closest("label");
+        if (!destinationInput.value && label && !label.hidden) destinationInput.focus();
+      }
+    });
+    window.MaximianosAirports.attach(destinationInput, {
+      requiresHotel: () => activeService === "hotels" || activeService === "packages",
+      onSelect: () => {
+        // adiado para o clique da lista não fechar o calendário logo em seguida
+        if (!selectedStart) setTimeout(() => document.querySelector("#departure-date-button")?.click(), 0);
+      }
+    });
+  }
 
   setService("flights");
   updateTravelers();
